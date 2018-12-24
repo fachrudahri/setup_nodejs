@@ -64,11 +64,11 @@ EmployeeRepository.prototype = {
         let db = this.db;
         let query = 'SELECT * FROM employee';
         db.query(query, (err, results, fields) => {
-            if(!err) {
+            if(err) {
                 errCb(err);
             }
             let employees = [];
-            for(let i=0; i<results.lenght;i++){
+            for(let i=0; i<results.length;i++){
                 let e = results[i];
                 let employee = new Employee(e.code , e.name, e.job, e.salary);
                 employees.push(employee);
