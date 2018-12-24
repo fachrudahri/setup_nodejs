@@ -34,7 +34,7 @@ let updateEmployee = (req, res, next) => {
     let employee = new Employee(code, data.name, data.job, parseFloat(data.salary));
     let employeeRepo = new EmployeeRepository(db);
     employeeRepo.update(employee, result => {
-        res.send('Tambah data sukses');
+        res.send('Data berhasil diganti');
         next();
     }, err => {
         if(err) {
@@ -51,7 +51,7 @@ let deleteEmployee = (req, res, next) => {
     let code = req.params.code;
     let employeeRepo = new EmployeeRepository(db);
     employeeRepo.delete(code, result => {
-        res.send('delete data sukses');
+        res.send('Data berhasil di hapus');
         next();
     }, err => {
         if(err) {
@@ -80,7 +80,7 @@ let getEmployee = (req, res, next) => {
 let getEmployees = (req, res, next) => {
     let employeeRepo = new EmployeeRepository(db);
     employeeRepo.findAll(result => {
-      res.status(200).json({message: 'get all employee', data: result});
+      res.status(200).json({message: 'List semua data', data: result});
       next();
     }, err => {
       if(err){

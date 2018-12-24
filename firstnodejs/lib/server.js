@@ -18,9 +18,9 @@ app.get('/', (req, res, next) => {
 });
 
 app.post('/employees', employeeController.saveEmployee);
-app.put('/employees/:code', employeeController.updateEmployee);
-app.delete('/employees/:code', employeeController.deleteEmployee);
-app.get('/employees/:code', employeeController.getEmployee);
-app.get('/employees', employeeController.getEmployees);
+app.put('/change/:code', employeeController.updateEmployee);
+app.delete('/delete/:code', employeeController.deleteEmployee);
+app.get('/find/:code', employeeController.getEmployee);
+app.get('/showall', employeeController.getEmployees);
 
 module.exports = app;
